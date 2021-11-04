@@ -1,16 +1,10 @@
 # auto_snackbar_sample
 
-A new Flutter project for auto snackbar sample.
+`Timer.periodic()`を使用して、`SnackBar`を1秒毎に表示できるようにしました。
 
-## Getting Started
+https://user-images.githubusercontent.com/55462291/140433323-c309cdee-0a03-4068-ae6c-efd1be63cb6f.mov
 
-This project is a starting point for a Flutter application.
+# 参考記事
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [【Flutter】SnackBarの使用方法に変更があったのでまとめてみた。](https://note.com/hatchoutschool/n/nee85f1b05ed6)
+- [Timer の使い方](https://flutter.keicode.com/basics/timer.php)
