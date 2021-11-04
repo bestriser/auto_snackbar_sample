@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Auto SnackBar',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Auto SnackBar'),
     );
   }
 }
@@ -37,15 +37,17 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     Timer.periodic(
       const Duration(seconds: 1),
-      (Timer timer) => _incrementCounter(),
+      (Timer timer) {
+        setState(() => _counter++);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('$_counter回'),
+            duration: const Duration(seconds: 1),
+          ),
+        );
+      },
     );
     super.initState();
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
   }
 
   @override
@@ -55,9 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Text(
-          '$_counter回',
-          style: Theme.of(context).textTheme.headline4,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            '1秒毎にスナックバーが表示されます',
+            style: Theme.of(context).textTheme.headline4,
+          ),
         ),
       ),
     );
